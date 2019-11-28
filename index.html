@@ -13,13 +13,23 @@
     </head>
     <body>
         <h1>Sandbox HTML</h1>
-        <button id="click">Turn me red!</button>
+        <button id="click" onclick=user.greet()>Alert!</button>
        
-       <script>
+       <!-- <script>
         document.getElementById('click').onclick = function changeContent() {
             document.getElementById('click').innerHTML = "Heyyyyy youuuuuuu!";
             document.getElementById('click').style = "Color: red";
          }
+        </script> -->
+        <script>
+        // document.getElementById('click').onclick = user.greet()
+        var user = {
+            name: 'Rafa',
+            age: 35,
+            greet() {
+                alert(`Heyyyy, my name is ${this.name}`)
+            }
+        }
         </script>
     </body>
 </html>
