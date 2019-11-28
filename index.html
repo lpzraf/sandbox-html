@@ -12,8 +12,9 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <h1>Sandbox HTML</h1>
-        <button id="click" onclick=user.greet()>Alert!</button>
+        <h1>Sandbox HTML & JS</h1>
+        <button id="implicitBinding" onclick=user.greet()>Implicit Binding!</button>
+        <button id="explicitBinding" onclick=greeting.call(user2)>Explicit Binding!</button>
        
        <!-- <script>
         document.getElementById('click').onclick = function changeContent() {
@@ -22,13 +23,23 @@
          }
         </script> -->
         <script>
-        // document.getElementById('click').onclick = user.greet()
+        // Implicit Binding
         var user = {
             name: 'Rafa',
             age: 35,
             greet() {
-                alert(`Heyyyy, my name is ${this.name}`)
+                alert(`Hey, my name is ${this.name} and you just called a function using implicit binding!`)
             }
+        }
+        
+        // Explicit Binding
+        function greeting() {
+            alert(`Hi there, my name is ${this.name} and you just used the .call method!`)
+        }
+
+        var user2 = {
+            name: "Cristina",
+            age: 25
         }
         </script>
     </body>
