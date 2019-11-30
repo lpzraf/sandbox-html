@@ -15,6 +15,7 @@
         <h1>Sandbox HTML & JS</h1>
         <button id="implicitBinding" onclick=user.greet()>Implicit Binding!</button>
         <button id="explicitBinding" onclick=greeting.call(user2)>Explicit Binding!</button>
+        <button id="newBinding" onclick=dude1()>New Binding!</button>
        
        <!-- <script>
         document.getElementById('click').onclick = function changeContent() {
@@ -28,19 +29,31 @@
             name: 'Rafa',
             age: 35,
             greet() {
-                alert(`Hey, my name is ${this.name} and you just called a function using implicit binding!`)
+                alert(`Hey, my name is ${this.name}. I just called a function using implicit binding!`)
             }
         }
         
         // Explicit Binding
         function greeting() {
-            alert(`Hi there, my name is ${this.name} and you just used the .call method!`)
+            alert(`Hi there, my name is ${this.name}. I'm using the .call method!`)
         }
 
         var user2 = {
             name: "Cristina",
             age: 25
         }
+
+        // New Binding
+        function Dude(name, age) {
+            this.name= name,
+            this.age= age
+        }
+        let rafa = new Dude('Rafael', 30)
+
+        function dude1 () {
+            alert(`Hi there, my name is ${rafa.name}. I'm using the new method!`)
+        }
+
         </script>
     </body>
 </html>
