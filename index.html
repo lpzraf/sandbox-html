@@ -10,20 +10,23 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     </head>
-    <body>
+    <body style="padding-left: 50px">
+        <div class="ui divider"></div>
         <h1>Sandbox HTML & JS</h1>
-        <button id="implicitBinding" onclick=user.greet()>Implicit Binding!</button>
-        <button id="explicitBinding" onclick=greeting.call(user2)>Explicit Binding!</button>
-        <button id="newBinding" onclick=dude1()>New Binding!</button>
-       
-       <!-- <script>
-        document.getElementById('click').onclick = function changeContent() {
-            document.getElementById('click').innerHTML = "Heyyyyy youuuuuuu!";
-            document.getElementById('click').style = "Color: red";
-         }
-        </script> -->
-        <script>
+            <div class="ui two column vertically padded grid">
+                <div class="column">
+                    <button class="blue ui button" onclick=user.greet()>Implicit Binding</button>
+                    <button class="blue ui button" onclick=dude1()>New Binding</button>
+                    <button class="blue ui button" onclick=greeting.call(user2)>Explicit Binding</button>
+                </div>
+                <!-- <div class="column">
+                    <button id="explicitBinding" class="blue ui button" onclick=greeting.call(user2)>Explicit Binding!</button>
+                </div> -->
+            </div>
+    
+    <script>
         // Implicit Binding
         var user = {
             name: 'Rafa',
